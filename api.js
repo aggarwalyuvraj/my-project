@@ -10,7 +10,7 @@ const app = express();
 
 const PORT = 3001;
 
-const indexRouter = require("./Router/index");
+const indexRouter = require("./router/index");
 
 app.use(cors());         
 app.use(express.json());

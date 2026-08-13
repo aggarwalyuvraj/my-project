@@ -12,6 +12,9 @@ const options = {
 
         servers: [
             {
+                url:"https://my-project-weos.onrender.com"
+            },
+            {
                 url: "http://localhost:3001"
             }
         ]
