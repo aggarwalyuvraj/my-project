@@ -7,7 +7,7 @@ const getCourseData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project3").find().toArray();
+        let result = await db.collection("course").find().toArray();
 
         res.json({
             success: true,
@@ -33,7 +33,7 @@ const insertCourseData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project3").insertOne(req.body);
+        let result = await db.collection("course").insertOne(req.body);
 
         if (result.acknowledged == true) {
 
@@ -69,7 +69,7 @@ const updateCourseData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project3").updateOne(
+        let result = await db.collection("course").updateOne(
             {
                 id: Number(req.params.id)
             },
@@ -112,7 +112,7 @@ const deleteCourseData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project3").deleteOne({
+        let result = await db.collection("course").deleteOne({
             id: Number(req.params.id)
         });
 
