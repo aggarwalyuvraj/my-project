@@ -7,7 +7,7 @@ const getTeacherData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project1").find().toArray();
+        let result = await db.collection("teacher").find().toArray();
 
         res.json({
             success: true,
@@ -33,7 +33,7 @@ const insertTeacherData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project1").insertOne(req.body);
+        let result = await db.collection("teacher").insertOne(req.body);
 
         if (result.acknowledged == true) {
 
@@ -69,7 +69,7 @@ const updateTeacherData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project1").updateOne(
+        let result = await db.collection("teacher").updateOne(
             {
                 id: Number(req.params.id)
             },
@@ -112,7 +112,7 @@ const deleteTeacherData = async (req, res) => {
 
         const db = await database.connectDB();
 
-        let result = await db.collection("project1").deleteOne({
+        let result = await db.collection("teacher").deleteOne({
             id: Number(req.params.id)
         });
 
